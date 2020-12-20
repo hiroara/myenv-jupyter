@@ -1,4 +1,4 @@
-FROM hiroara/myenv:plain
+FROM hiroara/myenv-python:3.7.9
 
 RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O /tmp/miniconda.sh --progress=bar:force:noscroll && \
     bash /tmp/miniconda.sh -b -p $HOME/miniconda && \
