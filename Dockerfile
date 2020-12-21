@@ -1,10 +1,13 @@
-FROM hiroara/myenv-python:3.7.9
+FROM hiroara/myenv:latest
 
 RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O /tmp/miniconda.sh --progress=bar:force:noscroll && \
     bash /tmp/miniconda.sh -b -p $HOME/miniconda && \
     rm /tmp/miniconda.sh
 
 ENV PATH $PATH:/root/miniconda/bin
+ENV PYTHON_VERSION=3.7.9
+
+RUN conda install python=${PYTHON_VERSION}
 
 RUN conda install -c conda-forge -y jupyterlab && \
     conda clean --all
