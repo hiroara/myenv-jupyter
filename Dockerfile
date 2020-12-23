@@ -26,6 +26,9 @@ RUN conda install -y \
       && \
     conda install -c conda-forge -y \
       ipywidgets \
+      && \
+    conda install -c anaconda -y \
+      tensorflow-estimator=2.0.0 \
       tensorflow-probability=0.8.0 \
       tensorflow=2.0.0 \
       && \
